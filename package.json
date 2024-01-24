@@ -1,0 +1,32 @@
+{
+  "name": "@fabric/mqtt",
+  "version": "0.1.0-RC1",
+  "description": "MQTT router for Fabric",
+  "main": "services/MQTT.js",
+  "scripts": {
+    "report:install": "rm -rf node_modules && echo \"\n\" > package-lock.json && echo \"$ npm i\" > reports/install.log && npm i >> reports/install.log",
+    "report:todo": "grep --exclude package.json --exclude-dir=.env --exclude-dir=.git --exclude-dir=_book --exclude-dir=stores --exclude-dir=assets --exclude-dir=node_modules --exclude-dir=reports --exclude-dir=coverage --exclude-dir=docs -rEI \"TODO|FIXME\" . | sed 's/\\([^:]*:\\)[ ]*/\\1 /' > reports/TODO.txt",
+    "start": "node scripts/node.js",
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabricLabs/fabric-mqtt.git"
+  },
+  "keywords": [
+    "fabric",
+    "mqtt",
+    "mesh",
+    "p2p"
+  ],
+  "author": "Fabric Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FabricLabs/fabric-mqtt/issues"
+  },
+  "homepage": "https://github.com/FabricLabs/fabric-mqtt#readme",
+  "dependencies": {
+    "@fabric/core": "FabricLabs/fabric#feature/v0.1.0-RC1",
+    "aedes": "0.51.0"
+  }
+}
